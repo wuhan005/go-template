@@ -32,3 +32,11 @@ func main() {
 	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
 	<-sig
 }
+
+func Map(array []string, f func(string) string) []string {
+	newArray := make([]string, 0, len(array))
+	for _, item := range array {
+		newArray = append(newArray, f(item))
+	}
+	return newArray
+}
