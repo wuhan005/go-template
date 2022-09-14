@@ -18,3 +18,5 @@
 .bin/
 .task
 .envrc
+.DS_Store
+.vscode
