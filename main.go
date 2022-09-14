@@ -13,7 +13,7 @@ func main() {
 	defer log.Stop()
 	err := log.NewConsole()
 	if err != nil {
-		panic(err)
+		panic("init log: " + err.Error())
 	}
 
 	// Inspire the world here!
@@ -31,12 +31,4 @@ func main() {
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
 	<-sig
-}
-
-func Map(array []string, f func(string) string) []string {
-	newArray := make([]string, 0, len(array))
-	for _, item := range array {
-		newArray = append(newArray, f(item))
-	}
-	return newArray
 }
