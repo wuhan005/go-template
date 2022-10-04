@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19.x
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
@@ -46,7 +50,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.18.x
+          go-version: 1.19.x
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run tests
