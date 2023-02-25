@@ -30,6 +30,17 @@ jobs:
         with:
           version: v1.49.0
           args: --timeout=10m
+      - name: Check Go module tidiness
+        shell: bash
+        run: |
+          go mod tidy
+          STATUS=$(git status --porcelain)
+          if [ ! -z "$STATUS" ]; then
+            echo "Unstaged files:"
+            echo $STATUS
+            echo "Run 'go mod tidy' commit them"
+            exit 1
+          fi
 
   test:
     name: Test
