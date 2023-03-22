@@ -81,6 +81,6 @@ func errorHandler(c flamego.Context, error Error) {
 	}
 	err := json.NewEncoder(c.ResponseWriter()).Encode(body)
 	if err != nil {
-		log.Error("Failed to encode response body: %v", err)
+		log.Error("Failed to encode response", "error", err)
 	}
 }

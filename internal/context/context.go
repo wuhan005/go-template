@@ -2,6 +2,7 @@ package context
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/charmbracelet/log"
@@ -31,13 +32,13 @@ func (c *Context) Success(data ...interface{}) error {
 		},
 	)
 	if err != nil {
-		log.Error("Failed to encode: %v", err)
+		log.Error("Failed to encode", "error", err)
 	}
 	return nil
 }
 
 func (c *Context) ServerError() error {
-	return c.Error(http.StatusInternalServerError*100, "internal server error")
+	return c.Error(http.StatusInternalServerError, "internal server error")
 }
 
 func (c *Context) Error(statusCode int, message string, v ...interface{}) error {
@@ -46,11 +47,11 @@ func (c *Context) Error(statusCode int, message string, v ...interface{}) error 
 
 	err := json.NewEncoder(c.ResponseWriter()).Encode(
 		map[string]interface{}{
-			"msg": message,
+			"msg": fmt.Sprintf(message, v...),
 		},
 	)
 	if err != nil {
-		log.Error("Failed to encode: %v", err)
+		log.Error("Failed to encode", "error", err)
 	}
 	return nil
 }
