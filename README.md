@@ -13,6 +13,6 @@ My Go Project Template
     * Update the project description.
     * Choose a friendly open source license.
 * Rename the package in `go.mod`.
-* Inspire the world!
+* Let's rock and roll!
 
 ## License
