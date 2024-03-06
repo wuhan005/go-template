@@ -26,9 +26,9 @@ jobs:
         with:
           go-version: 1.21.x
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v4
         with:
-          version: v4.0.0
+          version: v1.54
           args: --timeout=10m
       - name: Check Go module tidiness
         shell: bash
