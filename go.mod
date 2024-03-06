@@ -1,6 +1,6 @@
 module github.com/wuhan005/go-template
 
-go 1.19
+go 1.21
 
 require (
 	github.com/charmbracelet/log v0.1.2
