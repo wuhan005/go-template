@@ -36,6 +36,7 @@ jobs:
             echo "Unstaged files:"
             echo $STATUS
             echo "Run 'go mod tidy' commit them"
+            git diff
             exit 1
           fi
       - name: Run golangci-lint
