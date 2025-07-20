@@ -1,5 +1,3 @@
-permissions:
-  contents: read
 name: Go
 permissions:
   contents: read
