@@ -12,7 +12,6 @@ require (
 	github.com/rs/xid v1.2.1
 	github.com/sirupsen/logrus v1.9.3
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
-	github.com/swaggo/swag v1.16.5
 	github.com/thanhpk/randstr v1.0.6
 	github.com/wuhan005/govalid v0.0.4
 	go.opentelemetry.io/otel v1.37.0
@@ -74,6 +73,7 @@ require (
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/segmentio/asm v1.2.0 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
+	github.com/swaggo/swag v1.16.5 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.37.0 // indirect
