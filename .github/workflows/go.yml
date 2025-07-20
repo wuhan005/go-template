@@ -27,11 +27,6 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.24.x
-      - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v8
-        with:
-          version: v2.1
-          args: --timeout=10m
       - name: Check Go module tidiness
         shell: bash
         run: |
@@ -43,6 +38,11 @@ jobs:
             echo "Run 'go mod tidy' commit them"
             exit 1
           fi
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v8
+        with:
+          version: v2.1
+          args: --timeout=10m
 
   test:
     name: Test
